@@ -2,4 +2,4 @@
 
 ### Bem-vindo ao projeto Minions shop!
 
-Projeto feito com serverless framework e Nodejs 
+Projeto desenvolvido com serverless framework e Nodejs 

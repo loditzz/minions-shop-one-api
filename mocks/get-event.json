@@ -1,6 +1,6 @@
 {
   "pathParameters": {
-    "minionId": "1"
+    "id": "1"
   },
   "requestContext": {
     "identity": {
