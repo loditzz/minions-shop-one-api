@@ -1,5 +1,3 @@
-// Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: Apache-2.0
 
 var aws = require('aws-sdk');
 var ses = new aws.SES({region: 'us-west-2'});
@@ -8,11 +6,13 @@ exports.main = (event, context, callback) => {
   const data = JSON.parse(event.body);
     var params = {
         Destination: {
-            ToAddresses: ["loditzz@gmail.com", data.usuario]
+            //descomentar linha abaixo para enviar o email para o cliente ao sair do sandbox!
+            //ToAddresses: ["loditzz@gmail.com", "ariel@lawcheck.com.br", data.usuario]
+            ToAddresses: ["loditzz@gmail.com", "ariel@lawcheck.com.br"]
         },
         Message: {
             Body: {
-                Text: { Data: "Novo boneco Minion reservado! Boneco: " + data.descricao + " | Referencia: " + data.minionId + " | Usuario: " + data.usuario
+                Text: { Data: "Novo boneco Minion reservado! Boneco: " + data.descricao + " | Referencia do produto: " + data.minionId + " | Usuario que fez a reserva: " + data.usuario
                 }
             },
             Subject: { Data: "Novo boneco Minion reservado! - Minion Shop ONE"
