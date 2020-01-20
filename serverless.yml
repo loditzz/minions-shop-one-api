@@ -78,7 +78,21 @@ functions:
           path: pedidos
           method: get
           cors: true
-          authorizer: aws_iam       
+          authorizer: aws_iam  
+  email:
+    handler: email.main
+    events:
+      - http:
+          path: email
+          method: get
+          cors: true
+  emailone:
+    handler: emailone.main
+    events:
+      - http:
+          path: emailone
+          method: post
+          cors: true                           
 # Create our resources with separate CloudFormation templates
 resources:
   Resources:
